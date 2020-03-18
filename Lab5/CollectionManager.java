@@ -86,12 +86,12 @@ public class CollectionManager {
 
     /**
      * Execute command in file.
-     * @param args String
+     * @param filename String
      * @param a given List
      * @throws IOException
      */
-    public void execute_script(ArrayList<String> a, String args) throws  IOException {
-        File file = new File(args);
+    public void execute_script(ArrayList<String> a, String filename) throws  IOException {
+        File file = new File(filename);
         FileInputStream fis = null;
         BufferedInputStream bis = null;
         BufferedReader br = null;
@@ -115,7 +115,7 @@ public class CollectionManager {
                 bis.close();
                 fis.close();
             } catch (IOException ex) {
-                ex.printStackTrace();
+                System.out.println("Can't read file script.");
             }
         }
     }

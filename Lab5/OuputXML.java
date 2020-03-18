@@ -53,11 +53,11 @@ public class OuputXML {
             transformer.transform(source, file);
             System.out.println("Write to file have done.");
 
-        } catch (TransformerException | ParserConfigurationException e) {
-            System.out.println("Can't write to file.");
         } catch (FileNotFoundException e)
         {
             System.out.println("File not found.");
+        } catch (TransformerException | ParserConfigurationException e) {
+            System.out.println("Can't write to file.");
         }
     }
                 private static Node getPerson (Document doc, HumanBeing person)

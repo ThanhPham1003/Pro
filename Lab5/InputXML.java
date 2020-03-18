@@ -28,7 +28,6 @@ public class InputXML {
         Document doc = dBuilder.parse(bin);
         doc.getDocumentElement().normalize();
         NodeList nList = doc.getElementsByTagName("Person");
-        CollectionManager co = new CollectionManager();
         for (int temp = 0; temp < nList.getLength(); temp++) {
             Node nNode = nList.item(temp);
             Coordinates c = new Coordinates();

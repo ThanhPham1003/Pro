@@ -14,7 +14,6 @@ import java.util.Scanner;
  */
 
 public class HumanBeing implements Comparable<HumanBeing>{
-    ExceptionHandler eh= new ExceptionHandler();
     public static final double MAX = 1e18;
     public static final double MIN = -1e18;
     private static Integer count = 1;
@@ -56,7 +55,7 @@ public class HumanBeing implements Comparable<HumanBeing>{
      */
     @Override
     public int compareTo(HumanBeing people){
-        //return (this.name+ this.id).compareTo(people.name+ people.id);
+
         return this.name.compareTo(people.name);
     }
 
@@ -188,28 +187,28 @@ public class HumanBeing implements Comparable<HumanBeing>{
         creationDate= LocalDateTime.now().atZone(ZoneId.of("UTC+7"));
         Scanner commandReader = new Scanner(System.in);
         System.out.println("Enter the name of person: ");
-        name=eh.getString();
+        name=ExceptionHandler.getString();
         System.out.println("Enter the coordinates of person: ");
         System.out.print("X: ");
-        x=eh.getDouble(MIN,697);
+        x=ExceptionHandler.getDouble(MIN,697);
         System.out.print("Y: ");
-        y=eh.getDouble(MIN,MAX);
+        y=ExceptionHandler.getDouble(MIN,MAX);
         coordinates = new Coordinates(x,y);
         System.out.println("This is a real hero? Just answer True or False");
-        realHero=eh.getBoolean();
+        realHero=ExceptionHandler.getBoolean();
         System.out.println("Has Toothpick? Just answer True or False");
-        hasToothpick=eh.getBoolean();
+        hasToothpick=ExceptionHandler.getBoolean();
         System.out.println("How many impact speed?");
-        impactSpeed=eh.getLong(-910, Long.MAX_VALUE);
+        impactSpeed=ExceptionHandler.getLong(-910, Long.MAX_VALUE);
 
         System.out.println("Which weapon? Look at Weapon Type and choose one of them.");
-        weaponType=eh.creatWeaponType();
+        weaponType=ExceptionHandler.creatWeaponType();
         System.out.println("Which mood? Look at enum Mood and choose one of them.");
-        mood= eh.creatMood();
+        mood= ExceptionHandler.creatMood();
         System.out.println("Name of the Car: ");
-        nameofCar=eh.getString();
+        nameofCar=ExceptionHandler.getString();
         System.out.println("Is it cool? Just answer True or False");
-        cool=eh.getBoolean();
+        cool=ExceptionHandler.getBoolean();
         car = new Car(nameofCar,cool);
         person=new HumanBeing(id,name,coordinates,impactSpeed,realHero,hasToothpick,weaponType,mood,car);
         return person;

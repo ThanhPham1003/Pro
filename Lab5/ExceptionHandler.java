@@ -71,16 +71,13 @@ public class ExceptionHandler {
     }
     public static boolean getBoolean()
     {
-        boolean b;
         String s;
         while(true)
         {
             try{
                 s= getString();
-                b=Boolean.parseBoolean(s);
-                if(String.valueOf(b).toLowerCase().equals("true")||String.valueOf(b).toLowerCase().equals("false"))  return b;
+                if(s.toLowerCase().equals("true")||s.toLowerCase().equals("false"))  return Boolean.parseBoolean(s);
                 else throw new InputMismatchException();
-
             }
             catch (InputMismatchException e)
             {

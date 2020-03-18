@@ -37,19 +37,21 @@ public class Commander {
         this.manager = manager;
     }
 
-    public void interactiveModes(String[] args) throws IOException {
+    public void interactiveModes(String arg) throws IOException {
         try {
             while (!userCommand.equals("exit")) {
             System.out.println("Choose one of the following commands: ");
             userCommand = commandReader.nextLine();
             if(userCommand.equals("execute_script")) {
-                manager.execute_script(arr,args[1]);
+                System.out.println("Enter the file name: ");
+                userCommand=commandReader.nextLine();
+                manager.execute_script(arr,userCommand);
                 for (int i = 0; i < arr.size(); i++) {
                     System.out.println("Command: " + arr.get(i));
-                    Mode(arr.get(i),args[2]);
+                    Mode(arr.get(i),arg);
                 }
             }
-            else Mode(userCommand,args[2]);
+            else Mode(userCommand,arg);
             }
 
         } catch (InputMismatchException e) {

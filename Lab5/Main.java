@@ -8,20 +8,19 @@ import java.io.*;
  */
 public class Main {
     public static void main(String[] args) throws IOException, ParserConfigurationException, SAXException {
-        try {
-            for(int i=0;i<3;i++)
+       try {
+            for(int i=0;i<2;i++)
             {
                 if(args[i]==null) throw new Exception();
             }
             CollectionManager c = new CollectionManager();
             c.Read(args[0]);
-            //System.out.println(args[0]);
             Commander commander = new Commander(c);
-            commander.interactiveModes(args);
+            commander.interactiveModes(args[1]);
         }catch (Exception e)
         {
-            System.out.println("You need to enter all three arguments( File in , File script, File out)");
-            System.exit(0);
-        }
+           System.out.println("You need to enter all three arguments( File in , File out)");
+           System.exit(0);
+       }
     }
 }
