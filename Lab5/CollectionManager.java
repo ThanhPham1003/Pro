@@ -146,8 +146,19 @@ public class CollectionManager {
      */
     public void remove_key(String key)
     {
-        people.remove(key);
-        System.out.println("Removed key.");
+        boolean flag=false;
+        for (int i=0;i<people.size();i++) {
+            String tg = people.keySet().toArray(new String[people.size()])[i];
+            if (tg.compareTo(key)==0) {
+                people.remove(tg);
+                flag=true;
+            }
+        }
+        if(flag == false){
+            System.out.println("Don't have that key in collection.");
+        }
+        else System.out.println("Removed key.");
+
     }
 
     /**
@@ -183,13 +194,20 @@ public class CollectionManager {
      */
     public void replace_if_greater(HumanBeing person)
     {
-
+        boolean flag = false;
         for(int i=0;i<people.size();i++)
         {
             HumanBeing tg = people.values().toArray(new HumanBeing[people.size()])[i];
-            if(person.compareTo(tg)>0) people.replace(String.valueOf(tg.hashCode()),person);
+            if(person.compareTo(tg)>0){
+                people.replace(String.valueOf(tg.hashCode()),person);
+                flag=true;
+            }
         }
-        System.out.println("Replaced key.");
+        if(!flag){
+            System.out.println("The new value is not greater than the old.");
+        }
+        else System.out.println("Replaced key.");
+
     }
 
     /**
@@ -198,12 +216,20 @@ public class CollectionManager {
      */
     public void replace_if_lower(HumanBeing person)
     {
+        boolean flag = false;
         for(int i=0;i<people.size();i++)
         {
             HumanBeing tg = people.values().toArray(new HumanBeing[people.size()])[i];
-            if(person.compareTo(tg)<0) people.replace(String.valueOf(tg.hashCode()),person);
+            if(person.compareTo(tg)<0) {
+                people.replace(String.valueOf(tg.hashCode()),person);
+                flag=true;
+            }
         }
-        System.out.println("Replaced key.");
+        if(!flag){
+            System.out.println("The new value is not lower than the old.");
+        }
+        else System.out.println("Replaced key.");
+
     }
 
     /**
@@ -212,11 +238,19 @@ public class CollectionManager {
      */
     public void remove_lower_key(String key)
     {
+        boolean flag =false;
         for(int i=0;i<people.size();i++){
             String tg = people.keySet().toArray(new String[people.size()])[i];
-            if (tg.compareTo(key)<0) people.remove(tg);
+            if (tg.compareTo(key)<0){
+                people.remove(tg);
+                flag = true;
+            }
         }
-        System.out.println("Removed key.");
+        if(!flag){
+            System.out.println("The keys aren't less than the specified.");
+        }
+        else System.out.println("Removed key.");
+
     }
 
     /**
@@ -230,7 +264,7 @@ public class CollectionManager {
             HumanBeing tg = people.values().toArray(new HumanBeing[people.size()])[i];
             if(tg.getImpactSpeed()==is) k++;
         }
-        System.out.println("Have"+ k +" values equal to "+is);
+        System.out.println("Have "+ k +" value of impact speed equal to "+is);
     }
 
     /**
@@ -239,11 +273,15 @@ public class CollectionManager {
      */
     public void filter_by_mood(Mood m)
     {
-
+        boolean flag = false;
         for (int i=0;i<people.size();i++) {
             HumanBeing tg = people.values().toArray(new HumanBeing[people.size()])[i];
-            if(tg.getMood().equals(m)) System.out.println(tg.toString());
+            if(tg.getMood().equals(m)) {
+                System.out.println(tg.toString());
+                flag =true;
+            }
         }
+        if(!flag) System.out.println("Don't have that mood in collection.");
     }
    public void Read(String filename) throws ParserConfigurationException, SAXException, IOException {
         people= r.Reader(filename);

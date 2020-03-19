@@ -93,6 +93,7 @@ public class Commander {
                             manager.update_id(id);
                             break;
                         case "remove_key":
+                            System.out.println("Enter the key: ");
                             userCommand = commandReader.nextLine();
                             manager.remove_key(userCommand);
                             break;

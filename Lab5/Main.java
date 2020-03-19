@@ -10,8 +10,8 @@ public class Main {
     public static void main(String[] args) throws IOException, ParserConfigurationException, SAXException {
        try {
             for(int i=0;i<2;i++)
-            {
-                if(args[i]==null) throw new Exception();
+           {
+               if(args[i]==null) throw new Exception();
             }
             CollectionManager c = new CollectionManager();
             c.Read(args[0]);
@@ -20,7 +20,7 @@ public class Main {
         }catch (Exception e)
         {
            System.out.println("You need to enter all three arguments( File in , File out)");
-           System.exit(0);
+          System.exit(0);
        }
     }
 }

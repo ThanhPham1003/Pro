@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<People xmlns="&quot;https://www.ifmo.com">
+<Person id="1">
+<name>thanh</name>
+<Coordinates>{x=2.0, y=3.0}</Coordinates>
+<CreationDate>2020-03-19T02:04:28.749+07:00[UTC+07:00]</CreationDate>
+<ImpactSpeed>23</ImpactSpeed>
+<WeaponType>AXE</WeaponType>
+<Mood>CALM</Mood>
+<RealHero>false</RealHero>
+<HasToothpick>true</HasToothpick>
+<Car>{name='Lambo', cool=false}</Car>
+</Person>
+<Person id="2">
+<name>Dat</name>
+<Coordinates>{x=3.0, y=4.0}</Coordinates>
+<CreationDate>2020-03-19T02:05:04.388+07:00[UTC+07:00]</CreationDate>
+<ImpactSpeed>25</ImpactSpeed>
+<WeaponType>AXE</WeaponType>
+<Mood>SADNESS</Mood>
+<RealHero>true</RealHero>
+<HasToothpick>false</HasToothpick>
+<Car>{name='Toyota', cool=false}</Car>
+</Person>
+</People>
