@@ -47,7 +47,7 @@ public class InputXML {
             }
         }
     }catch (IOException e) {
-        System.out.println("File not found.");
+        System.out.println("Unable to open file.");
     }
        return people;
 }

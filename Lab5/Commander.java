@@ -46,10 +46,13 @@ public class Commander {
                 System.out.println("Enter the file name: ");
                 userCommand=commandReader.nextLine();
                 manager.execute_script(arr,userCommand);
-                for (int i = 0; i < arr.size(); i++) {
-                    System.out.println("Command: " + arr.get(i));
-                    Mode(arr.get(i),arg);
+                if(arr.size() != 0) {
+                    for (int i = 0; i < arr.size(); i++) {
+                        System.out.println("Command: " + arr.get(i));
+                        Mode(arr.get(i), arg);
+                    }
                 }
+
             }
             else Mode(userCommand,arg);
             }

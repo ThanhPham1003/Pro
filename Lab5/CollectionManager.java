@@ -105,12 +105,7 @@ public class CollectionManager {
             while ((currentLine = br.readLine()) != null) {
                 a.add(currentLine);
             }
-
-        } catch (FileNotFoundException e) {
-            System.out.println("Fine not found.");
-        } finally {
-            try {
-
+            
                 br.close();
                 bis.close();
                 fis.close();
@@ -118,7 +113,7 @@ public class CollectionManager {
                 System.out.println("Can't read file script.");
             }
         }
-    }
+
 
     /**
      * Change properties of the object whose id is equal to specified.

@@ -53,9 +53,9 @@ public class OuputXML {
             transformer.transform(source, file);
             System.out.println("Write to file have done.");
 
-        } catch (FileNotFoundException e)
+        } catch (IOException e)
         {
-            System.out.println("File not found.");
+            System.out.println("Can't write to file.");
         } catch (TransformerException | ParserConfigurationException e) {
             System.out.println("Can't write to file.");
         }
