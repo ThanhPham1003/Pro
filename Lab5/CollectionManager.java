@@ -113,8 +113,6 @@ public class CollectionManager {
                 System.out.println("Can't read file script.");
             }
         }
-
-
     /**
      * Change properties of the object whose id is equal to specified.
      * @param id
@@ -178,9 +176,9 @@ public class CollectionManager {
         }
         for(int k =0;k<people.size();k++)
         {
-            temp.put(String.valueOf(a[k].hashCode()),a[k]);
+            System.out.println(a[k].hashCode() + ": "+a[k].toString());
         }
-        temp.forEach((keyString,valueHumanbeing) -> System.out.println(keyString + ": "+valueHumanbeing.toString()));
+
     }
 
     /**
