@@ -20,8 +20,9 @@ public class ReplacaIfLowerCommand extends AbstractCommand {
         for(int i=0;i<getManager().getPeople().size();i++)
         {
             HumanBeing tg = getManager().getPeople().values().toArray(new HumanBeing[getManager().getPeople().size()])[i];
+            String key = getManager().getPeople().keySet().toArray(new String[getManager().getPeople().size()])[i];
             if(person.compareTo(tg)<0){
-                getManager().getPeople().replace(String.valueOf(tg.hashCode()),person);
+                getManager().getPeople().replace(key,person);
                 flag=true;
             }
         }
@@ -30,7 +31,6 @@ public class ReplacaIfLowerCommand extends AbstractCommand {
         }
         else
         {
-            getManager().save();
             return "Replaced key.";
         }
 

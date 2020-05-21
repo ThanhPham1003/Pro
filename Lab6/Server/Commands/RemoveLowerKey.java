@@ -29,7 +29,6 @@ public class RemoveLowerKey extends AbstractCommand {
             return "The keys aren't less than the specified.";
         }
         else {
-            getManager().save();
             return "Removed key.";
         }
 

@@ -5,6 +5,8 @@ import Object.*;
 
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
+import java.util.Scanner;
+
 /**
  * Add new person to Collection.
  */
@@ -17,8 +19,10 @@ public class InsertCommand extends AbstractCommand {
     @Override
     public synchronized String execute(Object args) throws IOException, ParserConfigurationException {
         HumanBeing person = (HumanBeing) args;
+
         getManager().getPeople().put(String.valueOf(person.hashCode()), person);
-        getManager().save();
-        return "Element saved.";
+        return "Element saved in the collection.";
+
+
     }
 }

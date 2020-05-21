@@ -60,7 +60,7 @@ public class OuputXML {
         {
             System.out.println("Can't write to file.");
         } catch (TransformerException | ParserConfigurationException e) {
-            System.out.println("Can't write to file.");
+            System.out.println("File isn't XML.");
         }
     }
                 private static Node getPerson (Document doc, HumanBeing person)

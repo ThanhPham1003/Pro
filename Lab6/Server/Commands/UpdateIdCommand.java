@@ -21,19 +21,20 @@ public class UpdateIdCommand extends AbstractCommand {
     public synchronized String execute(Object args) throws IOException, ParserConfigurationException {
         HumanBeing person = (HumanBeing) args;
         boolean flag = false;
+
         for(int i=0;i<getManager().getPeople().size();i++)
         {
             HumanBeing tg = getManager().getPeople().values().toArray(new HumanBeing[getManager().getPeople().size()])[i];
+            String key = getManager().getPeople().keySet().toArray(new String[getManager().getPeople().size()])[i];
             if(tg.getId()==id)
             {
                 flag = true;
-                getManager().getPeople().remove(String.valueOf(tg.hashCode()));
-                getManager().getPeople().put(String.valueOf(person.hashCode()),person);
+                person.setId(id);
+                getManager().getPeople().replace(key,person);
             }
         }
         if(flag)
         {
-            getManager().save();
             return "Updated Collection.";
         }
         else return "Id does not exist in collection";

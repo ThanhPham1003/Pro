@@ -3,6 +3,8 @@ package TCPServer;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
+
 import Object.*;
 
 import org.w3c.dom.Document;
@@ -10,6 +12,7 @@ import org.w3c.dom.NodeList;
 import org.w3c.dom.Node;
 import org.w3c.dom.Element;
 import org.xml.sax.SAXException;
+import org.xml.sax.SAXParseException;
 
 import java.io.*;
 import java.util.HashMap;
@@ -52,7 +55,9 @@ public class InputXML {
         }
     }catch (IOException e) {
         System.out.println("Unable to open file.");
-    }
+    }catch (SAXParseException  e) {
+           System.out.println("File isn't XML.");
+       }
        return people;
 }
 }

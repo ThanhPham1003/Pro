@@ -19,7 +19,7 @@ public class RemoveKeyCommand extends AbstractCommand {
         boolean flag=false;
         for (int i=0;i<getManager().getPeople().size();i++) {
             String tg = getManager().getPeople().keySet().toArray(new String[getManager().getPeople().size()])[i];
-            if (tg.compareTo(key)==0) {
+            if (tg.equals(key)) {
                 getManager().getPeople().remove(tg);
                 flag=true;
             }
@@ -29,7 +29,6 @@ public class RemoveKeyCommand extends AbstractCommand {
         }
         else
         {
-            getManager().save();
             return "Removed key.";
         }
 
