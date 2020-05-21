@@ -71,7 +71,7 @@ public class TCPSender {
         else
         {
             oos.writeObject(command);
-            oos.writeObject("hello");
+            oos.writeObject("Nothing.");
         }
         oos.close();
     }

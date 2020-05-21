@@ -7,8 +7,10 @@ import java.nio.channels.SocketChannel;
 
 public class TCPReceiver implements Runnable{
     private InetSocketAddress is;
+
     public TCPReceiver(InetSocketAddress is){
-        this.is = is; }
+        this.is = is;
+    }
 
     /**
      * Run to receive data from server.
@@ -21,6 +23,7 @@ public class TCPReceiver implements Runnable{
             ObjectInputStream ois = new ObjectInputStream(ssChannel.socket().getInputStream());
             fromServer = (String) ois.readObject();
             System.out.println(fromServer);
+
         }catch (IOException e)
         {
             System.out.println("Data tranfer error.");

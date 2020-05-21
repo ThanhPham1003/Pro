@@ -10,7 +10,7 @@ public class TCPClientConnect {
 
     public static void main(String[] args) {
        while (true) {
-            InetSocketAddress is = new InetSocketAddress(1111);
+            InetSocketAddress is = new InetSocketAddress(1928);
             TCPSender s = new TCPSender(is);
             TCPReceiver r = new TCPReceiver(is);
 
